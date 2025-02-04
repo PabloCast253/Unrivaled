@@ -1,0 +1,15 @@
+
+from googleapiclient.discovery import build
+
+api_key = 'AIzaSyAhNYLy--ScB7_05hT-CTr1-1taIn4_5jQ'
+
+youtube = build('youtube', 'v3', developerKey=api_key)
+
+request = youtube.videos().list(
+    part='statistics',
+    forUsername='schafer5'
+)
+
+response = request.execute()
+
+print(response)
