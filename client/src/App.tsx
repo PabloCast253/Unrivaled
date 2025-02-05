@@ -1,4 +1,5 @@
 import SuperButton from "./components/ui/button";
+import Footer from "./components/ui/footer";
 import "./App.css";
 // import { Input } from "@/components/ui/input";
 
@@ -18,14 +19,14 @@ const App = () => {
       {/* Main Content */}
       <main className="">
         <div className="">
-          <SuperButton/><SuperButton/><SuperButton/>
+          <SuperButton/>
           {}
         </div>
       </main>
 
       {/* Footer */}
       <footer className="">
-        <p className="">All rights reserved.</p>
+        <Footer />
       </footer>
     </>
   );
