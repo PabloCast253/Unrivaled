@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import HelaImage from "/images/Hela.png";
 import "./characterPage.css";
+import YouTubePlayer from "../components/YouTubePlayer";
 
 const characterData: Record<string, { name: string; description: string; image: string }> = {
   Hela: {
@@ -23,6 +24,9 @@ const CharacterPage = () => {
       <h1>{hero.name}</h1>
       <img src={hero.image} alt={hero.name} className="character-image" />
       <p>{hero.description}</p>
+      <div>
+                     <YouTubePlayer videoId="bbc3rUZxz1c" /> {/* Replace with your video ID */}
+                </div>
     </div>
   );
 };

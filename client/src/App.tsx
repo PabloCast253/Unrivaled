@@ -12,6 +12,7 @@ import { HELA } from "./data/heroes";
 import CharacterPage from "./pages/CharacterPage";
 
 
+
 // import { Input } from "@/components/ui/input";
 
 const App = () => {
@@ -38,6 +39,7 @@ const App = () => {
                 <div style={{ display: "flex", gap: "10px", flexWrap: "wrap" }}>
                   <SuperButton heroName={HELA.name} />
                 </div>
+              
               </main>
 
               {/* Footer */}
