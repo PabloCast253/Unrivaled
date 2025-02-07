@@ -1,0 +1,14 @@
+.super-button {
+    width: 200px;
+    height: 200px;
+    border: none;
+    border-radius: 8px;
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .super-button:hover {
+    transform: scale(1.1);
+  }
