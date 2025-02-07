@@ -1,24 +1,29 @@
-// import React, { useState } from "react";
+import React, { useState } from "react";
 
-// const SearchBar = ({ onSearch, placeholder }) => {
-//   const [query, setQuery] = useState("");
+interface SearchBarProps {
+  onSearch: (searchTerm: string) => void;
+  placeholder?: string;
+}
 
-//   const handleChange = (event) => {
-//     const searchTerm = event.target.value;
-//     setQuery(searchTerm);
-//     onSearch(searchTerm); // Calls the parent component's search function
-//   };
+const SearchBar: React.FC<SearchBarProps> = ({ onSearch, placeholder }) => {
+  const [query, setQuery] = useState("");
 
-//   return (
-//     <div className="search-bar">
-//       <input
-//         type="text"
-//         value={query}
-//         onChange={handleChange}
-//         placeholder={placeholder || "Search..."}
-//       />
-//     </div>
-//   );
-// };
+  const handleChange = (event: { target: { value: any; }; }) => {
+    const searchTerm = event.target.value;
+    setQuery(searchTerm);
+    onSearch(searchTerm); // Calls the parent component's search function
+  };
 
-// export default SearchBar;
+  return (
+    <div className="search-bar">
+      <input
+        type="text"
+        value={query}
+        onChange={handleChange}
+        placeholder={placeholder || "Search..."}
+      />
+    </div>
+  );
+};
+
+export default SearchBar;
