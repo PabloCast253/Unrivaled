@@ -13,6 +13,7 @@
 // import CharacterPage from "./pages/CharacterPage";
 
 
+
 // import { Input } from "@/components/ui/input";
 
 const App = () => {
@@ -68,6 +69,7 @@ const App = () => {
                     <h2>Services we offer</h2>
                     <p className="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut optio velit inventore, expedita quo laboriosam possimus ea consequatur vitae, doloribus consequuntur ex. Nemo assumenda laborum vel, labore ut velit dignissimos.</p>
                 </div>
+
             </div>
         </div>
     </section> */}
@@ -90,8 +92,9 @@ const App = () => {
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
       {/* <!-- Core theme JS--> */}
       <script src="js/scripts.js"></script>
-    </body></>
-    
+        </body></>
+
+
   );
 };
 
