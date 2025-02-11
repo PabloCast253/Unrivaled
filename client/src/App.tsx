@@ -1,13 +1,14 @@
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import SuperButton from "./components/ui/button";
 import HomePage from "./pages/HomePage";
 import CharacterPage from "./pages/CharacterPage";
 import LoginPage from "./pages/LoginPage"; // Create a login page
 import CharacterList from "./pages/CharacterList"; // Page to show all characters
 import "./App.css";
+import { DataProvider } from "./data/heroapi.tsx";
 
 const App = () => {
   return (
+    <DataProvider>
     <Router>
       <Routes>
         {/* Home Page */}
@@ -23,6 +24,7 @@ const App = () => {
         <Route path="/character/:heroName" element={<CharacterPage />} />
       </Routes>
     </Router>
+    </DataProvider>
   );
 };
 
