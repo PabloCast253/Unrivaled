@@ -1,6 +1,4 @@
-import sequelize from '../config/connection.js';
-import { UserFactory } from './user.js';
+import  sequelize  from '../config/connection.js'; // ✅ Ensure correct import
+import User from './User.js'; // ✅ Import `User` directly (no factory function)
 
-const User = UserFactory(sequelize);
-
-export { User };
+export { sequelize, User }; // ✅ Export both the database connection & models
