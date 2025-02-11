@@ -1,20 +1,25 @@
+import express from "express";
+import cors from "cors"; // ✅ Import cors to allow frontend requests
+import sequelize from "./config/connection.js";
+import routes from "./routes/index.js";
+
 const forceDatabaseRefresh = false;
-
-import express from 'express';
-import sequelize from './config/connection.js';
-import routes from './routes/index.js';
-
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-// Serves static files in the entire client's dist folder
-app.use(express.static('../client/dist'));
+// ✅ Middleware
+app.use(cors()); // Prevents frontend/backend CORS issues
+app.use(express.json()); // Parses incoming JSON requests
 
-app.use(express.json());
-app.use(routes);
+// ✅ Serves frontend static files (only after running `npm run build` in frontend)
+app.use(express.static("../client/dist"));
 
+// ✅ Attach all API routes
+app.use("/api", routes);
+
+// ✅ Connect to database
 sequelize.sync({ force: forceDatabaseRefresh }).then(() => {
   app.listen(PORT, () => {
-    console.log(`Server is listening on port ${PORT}`);
+    console.log(`🚀 Server is running on port ${PORT}`);
   });
 });

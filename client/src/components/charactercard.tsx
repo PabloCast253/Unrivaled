@@ -1,5 +1,4 @@
 
-
 interface CharacterCardProps {
   name: string;
   role: string;
