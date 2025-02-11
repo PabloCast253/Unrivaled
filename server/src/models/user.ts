@@ -1,8 +1,8 @@
 import { DataTypes, type Sequelize, Model, type Optional } from "sequelize";
-import  sequelize  from "../config/connection.js"; // ✅ Ensure correct import
+import  sequelize  from "../config/connection.js"; //  Ensure correct import
 import bcrypt from "bcrypt";
 
-// ✅ Define the user attributes interface
+//  Define the user attributes interface
 interface UserAttributes {
   id: number;
   username: string;
@@ -10,7 +10,7 @@ interface UserAttributes {
   password: string;
 }
 
-// ✅ Define creation attributes (id is optional)
+//  Define creation attributes (id is optional)
 interface UserCreationAttributes extends Optional<UserAttributes, "id"> {}
 
 export class User
@@ -25,14 +25,14 @@ export class User
   public readonly createdAt!: Date;
   public readonly updatedAt!: Date;
 
-  // ✅ Hash password before storing in the database
+  //  Hash password before storing in the database
   public async setPassword(password: string) {
     const saltRounds = 10;
     this.password = await bcrypt.hash(password, saltRounds);
   }
 }
 
-// ✅ Initialize the User model (No need for a separate factory function)
+//  Initialize the User model (No need for a separate factory function)
 User.init(
   {
     id: {
@@ -57,7 +57,7 @@ User.init(
   },
   {
     tableName: "users",
-    sequelize, // ✅ Ensure it connects to the database
+    sequelize, //  Ensure it connects to the database
     hooks: {
       beforeCreate: async (user: User) => {
         await user.setPassword(user.password);
@@ -69,5 +69,5 @@ User.init(
   }
 );
 
-// ✅ Export the User model directly
+//  Export the User model directly
 export default User;

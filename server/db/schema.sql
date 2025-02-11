@@ -1,11 +1,11 @@
--- ✅ Drop existing database (if needed) and create a new one
+--  Drop existing database (if needed) and create a new one
 DROP DATABASE IF EXISTS unrivaled_db;
 CREATE DATABASE unrivaled_db;
 
--- ✅ Connect to the new database
+--  Connect to the new database
 \c unrivaled_db;
 
--- ✅ Create Users Table
+--  Create Users Table
 CREATE TABLE users (
   id SERIAL PRIMARY KEY,           -- Auto-incrementing unique ID
   username VARCHAR(50) UNIQUE NOT NULL,  -- Unique username
@@ -14,7 +14,7 @@ CREATE TABLE users (
   created_at TIMESTAMP DEFAULT NOW()  -- Auto-timestamp for creation
 );
 
--- ✅ Create Posts Table (Forum)
+--  Create Posts Table (Forum)
 CREATE TABLE posts (
   id SERIAL PRIMARY KEY,          -- Auto-incrementing post ID
   character_name VARCHAR(50) NOT NULL,  -- Marvel character's name

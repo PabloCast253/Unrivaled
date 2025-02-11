@@ -2,8 +2,10 @@ import { Sequelize } from "sequelize";
 import fs from "fs/promises";
 import path from "path"; // To work with file paths
 import User from "./user.js"; // Import User model
+import dotenv from "dotenv";
+dotenv.config();
 
-const sequelize = new Sequelize("unrivaled_db", "your_db_username", "your_db_password", {
+const sequelize = new Sequelize (process.env.DB_NAME || '', process.env.DB_USERNAME || '', process.env.DB_PASSWORD, {
   host: "localhost",
   dialect: "postgres",
   logging: false,
@@ -50,4 +52,4 @@ const startServer = async () => {
 
 startServer();
 
-export { sequelize, User }; // ✅ Export both the database connection & models
+export { sequelize, User }; //  Export both the database connection & models

@@ -3,7 +3,7 @@ import { Post } from "../models/Post.js";
 import { User } from "../models/user.js";
 
 /**
- * ✅ Controller: Fetch all posts from the database.
+ *  Controller: Fetch all posts from the database.
  * 
  * @param req - Express request object
  * @param res - Express response object returning all posts
@@ -24,7 +24,7 @@ export const getAllPosts = async (req: Request, res: Response) => {
 };
 
 /**
- * ✅ Controller: Fetch posts related to a specific character.
+ *  Controller: Fetch posts related to a specific character.
  * 
  * @param req - Express request object containing characterName in URL params.
  * @param res - Express response object returning posts for that character.
@@ -48,7 +48,7 @@ export const getPosts = async (req: Request, res: Response) => {
 };
 
 /**
- * ✅ Controller: Create a new post.
+ *  Controller: Create a new post.
  * Only authenticated users can create posts.
  * 
  * @param req - Express request object containing post data in the body.
@@ -76,7 +76,7 @@ export const createPost = async (req: Request, res: Response) => {
 };
 
 /**
- * ✅ Controller: Delete a post.
+ *  Controller: Delete a post.
  * Only the user who created the post can delete it.
  * 
  * @param req - Express request object containing post ID in URL params.
