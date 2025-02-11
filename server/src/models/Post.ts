@@ -1,6 +1,6 @@
 import { DataTypes, Sequelize, Model, Optional } from "sequelize";
 import  sequelize from "../config/connection.js"; // ✅ Ensure correct import
-import { User } from "./User.js";
+import { User } from "./user.js";
 
 /**
  * Defines the attributes for the Post model.

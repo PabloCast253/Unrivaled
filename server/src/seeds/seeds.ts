@@ -1,5 +1,5 @@
 import  sequelize  from "../config/connection.js"; // ✅ Ensure correct import
-import { User } from "../models/User.js"; // ✅ Ensure proper import
+import { User } from "../models/user.js"; // ✅ Ensure proper import
 import { Post } from "../models/Post.js";
 import bcrypt from "bcrypt";
 

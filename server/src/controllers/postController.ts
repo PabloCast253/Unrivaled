@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { Post } from "../models/Post.js";
-import { User } from "../models/User.js";
+import { User } from "../models/user.js";
 
 /**
  * ✅ Controller: Fetch all posts from the database.

@@ -1,7 +1,7 @@
 import { Sequelize } from "sequelize";
 import fs from "fs/promises";
 import path from "path"; // To work with file paths
-import User from "./User.js"; // Import User model
+import User from "./user.js"; // Import User model
 
 const sequelize = new Sequelize("unrivaled_db", "your_db_username", "your_db_password", {
   host: "localhost",
