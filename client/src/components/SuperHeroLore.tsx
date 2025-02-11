@@ -1,2 +1,0 @@
-// const 
-// export default SuperHeroLore

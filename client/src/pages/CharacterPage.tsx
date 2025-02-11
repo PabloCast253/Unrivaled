@@ -3,6 +3,12 @@ import HelaImage from "/images/Hela.png";
 import "./characterPage.css";
 import YouTubePlayer from "../components/YouTubePlayer";
 import Forum from "../components/forum";
+// import { DataContext } from "../data/heroapi";
+// import { useContext } from "react";
+
+// const dataPage = ()=> {
+//     const { data } = useContext(DataContext);
+// }
 
 const characterData: Record<string, { name: string; description: string; image: string }> = {
   Hela: {
@@ -33,5 +39,6 @@ const CharacterPage = () => {
     </div>
   );
 };
+
 
 export default CharacterPage;
