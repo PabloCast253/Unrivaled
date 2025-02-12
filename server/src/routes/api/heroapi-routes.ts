@@ -1,11 +1,10 @@
 import dotenv from 'dotenv';
 import { Request, Response } from 'express';
+import { Router } from 'express'; 
+import fetch from 'node-fetch';
 dotenv.config();
 
-const express = require("express");
-const fetch = require("node-fetch");
-
-const app = express();
+const router = Router();
 
 // Use the API key from the environment variable
 const API_BASE_URL = `https://superheroapi.com/api/${process.env.SUPERHERO_API_KEY}/`;
@@ -18,7 +17,7 @@ interface myQuery {
   filter: string;
 }
 
-app.get("/api/character/:id", async (req: Request <myParams,{},{}, myQuery>, res: Response) => {
+router.get("/:id", async (req: Request <myParams,{},{}, myQuery>, res: Response) => {
   const { id } = req.params;
   const { filter } = req.query;
   try {
@@ -35,5 +34,4 @@ app.get("/api/character/:id", async (req: Request <myParams,{},{}, myQuery>, res
   }
 });
 
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+export default router;

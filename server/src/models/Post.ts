@@ -1,6 +1,6 @@
 import { DataTypes, Sequelize, Model, Optional } from "sequelize";
-import  sequelize from "../config/connection.js"; // ✅ Ensure correct import
-import { User } from "./User.js";
+import  sequelize from "../config/connection.js"; //  Ensure correct import
+import { User } from "./user.js";
 
 /**
  * Defines the attributes for the Post model.
@@ -37,7 +37,7 @@ class Post
 }
 
 /**
- * ✅ Initialize the Post model immediately upon import.
+ *  Initialize the Post model immediately upon import.
  */
 Post.init(
   {
@@ -61,16 +61,16 @@ Post.init(
   },
   {
     tableName: "posts",
-    sequelize, // ✅ Ensure it's connected to the database
+    sequelize, //  Ensure it's connected to the database
     timestamps: true,
   }
 );
 
 /**
- * ✅ Define relationships:
+ *  Define relationships:
  * - Each post belongs to a user.
  * - If a user is deleted, all their posts are removed (CASCADE).
  */
 Post.belongsTo(User, { foreignKey: "user_id", onDelete: "CASCADE" });
 
-export { Post }; // ✅ Properly export the initialized Post model
+export { Post }; //  Properly export the initialized Post model

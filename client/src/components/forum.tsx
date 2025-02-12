@@ -5,7 +5,7 @@ interface Post {
   content: string;
   createdAt: string;
   User: {
-    username: string; // ✅ Display username instead of user_id
+    username: string; //  Display username instead of user_id
   };
 }
 
@@ -14,18 +14,18 @@ const Forum = ({ characterName }: { characterName: string }) => {
   const [newPost, setNewPost] = useState("");
   const [token, setToken] = useState<string | null>(localStorage.getItem("token"));
 
-  // ✅ Fetch posts when component loads
+  //  Fetch posts when component loads
   useEffect(() => {
     fetch(`http://localhost:3001/api/posts/${characterName}`)
       .then((res) => res.json())
       .then((data) => {
-        console.log("✅ Seeded posts fetched:", data); // Debugging
+        console.log(" Seeded posts fetched:", data); // Debugging
         setPosts(data);
       })
       .catch((error) => console.error("❌ Error fetching posts:", error));
   }, [characterName]);
 
-  // ✅ Function to submit a new post
+  //  Function to submit a new post
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!token) {
@@ -52,12 +52,12 @@ const Forum = ({ characterName }: { characterName: string }) => {
 
       const newPostData = await res.json();
 
-      // ✅ Refresh posts after submitting a new post
+      //  Refresh posts after submitting a new post
       fetch(`http://localhost:3001/api/posts/${characterName}`)
         .then((res) => res.json())
         .then((updatedPosts) => setPosts(updatedPosts));
 
-      setNewPost(""); // ✅ Clear input field
+      setNewPost(""); //  Clear input field
     } catch (error) {
       console.error("❌ Error posting:", error);
       alert("Failed to submit post.");
@@ -68,7 +68,7 @@ const Forum = ({ characterName }: { characterName: string }) => {
     <div className="forum">
       <h2>Forum for {characterName}</h2>
 
-      {/* ✅ Always show forum posts */}
+      {/*  Always show forum posts */}
       <ul>
         {posts.length === 0 ? (
           <p>No posts yet. Be the first to post!</p>
@@ -82,7 +82,7 @@ const Forum = ({ characterName }: { characterName: string }) => {
         )}
       </ul>
 
-      {/* ✅ Only show post form if user is logged in */}
+      {/*  Only show post form if user is logged in */}
       {token ? (
         <form onSubmit={handleSubmit}>
           <textarea
